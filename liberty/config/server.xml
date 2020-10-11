@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<server description="new server">
+
+    <featureManager>
+        <feature>javaee-7.0</feature>
+        <feature>localConnector-1.0</feature>
+        <feature>jsf-2.2</feature>
+        <feature>jpa-2.1</feature>
+        <feature>jaxrs-2.0</feature>
+        <feature>mpMetrics-1.1</feature>
+        <feature>monitor-1.0</feature>
+        <feature>springBoot-2.0</feature>
+        <feature>jsp-2.3</feature>
+      <feature>batchManagement-1.0</feature>
+       <feature>transportSecurity-1.0</feature >
+        <feature>webProfile-7.0</feature>
+    </featureManager>
+
+    <httpSession cookieHttpOnly="true" cookieSecure="true"/>
+
+    <httpEndpoint host="*" httpPort="9080" httpsPort="9443" id="defaultHttpEndpoint"/>
+
+    <applicationManager autoExpand="true"/>
+
+    <library id="dashDB4">
+        <file name="${server.config.dir}/lib/ojdbc8.jar"/>
+    </library>
+    <library id="serverResources">
+        <folder dir="${server.config.dir}/resources"/>
+    </library>
+
+    <springBootApplication location="demo-0.0.1-SNAPSHOT.war"/>
+    <!-- webApplication contextRoot="/demo" id="demo" location="demo-0.0.1-SNAPSHOT.war" name="demo" type="war"/ -->
+    
+</server>

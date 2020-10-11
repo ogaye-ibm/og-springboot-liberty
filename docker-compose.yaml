@@ -1,0 +1,19 @@
+version: "2.1"
+services:
+  ora-canon:
+    image: oracle/database:12.2.0.1-ee
+
+    ports:
+      - 1521:1521
+      - 5500:5500
+    environment:
+      ORACLE_PWD: admin
+      ORACLE_CHARACTERSET: AL32UTF8
+  #canon-app:
+    #image: canon-app:latest
+    #ports:
+        #- 8090:8090
+        #- 9443:9443
+    #links:
+        #- ora-canon
+    #restart: on-failure
